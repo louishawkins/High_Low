@@ -34,25 +34,26 @@ if($_mode == "-c"){echo "(It's " . NUMBER . ".)\n";}
 elseif($_mode == "-h"){echo "-n [number1] [number2] -- will start with lower value and end with higher value.\n-c Cheat mode; shows number genereated by computer.";}
 
 else {
-	while ($guess != NUMBER) {
 
-		$guess = fgets(STDIN);
+		do {
 
-		if ($guess == NUMBER) {
-			fwrite(STDOUT, "That is the correct number!\n+ 10000 points!\n");
+			$guess = fgets(STDIN);
 
-		}
+			if ($guess == NUMBER) {
+				fwrite(STDOUT, "That is the correct number!\n+ 10000 points!\n");
 
-		elseif ($guess < NUMBER) {
-			fwrite(STDOUT, "Guess higher!\n");
-		}
+			}
 
-		else {
-			fwrite(STDOUT, "Guess lower!\n");
-		}
+			elseif ($guess < NUMBER) {
+				fwrite(STDOUT, "Guess higher!\n");
+			}
 
-}
-}
+			else {
+				fwrite(STDOUT, "Guess lower!\n");
+			}
+		} while ($guess != NUMBER);
+};
+
 
 ?>
 
