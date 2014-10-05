@@ -40,7 +40,7 @@ else {
 			$guess = fgets(STDIN);
 
 			if ($guess == NUMBER) {
-				fwrite(STDOUT, "That is the correct number!\n+ 10000 points!\n");
+				fwrite(STDOUT, "That is the correct number!\n+ 1000000 points!\n");
 
 			}
 
