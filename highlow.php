@@ -31,7 +31,7 @@ echo "Guess which number I'm thinking of (between {$_min} and {$_max})!\n";
 
 if($_mode == "-c"){echo "(It's " . NUMBER . ".)\n";}
 
-elseif($_mode == "-h"){echo "-n [number1] [number2] -- will start with lower value and end with higher value.\n-c Cheat mode; shows number genereated by computer.";}
+elseif($_mode == "-h"){echo "-n [number1] [number2] -- will start with lower value and end with higher value.\n-c Cheat mode; shows number genereated by computer.\n999999 Escape; Ends game, shows computer generated number.\n";}
 
 else {
 
@@ -46,6 +46,11 @@ else {
 
 			elseif ($guess < NUMBER) {
 				fwrite(STDOUT, "Guess higher!\n");
+			}
+
+			elseif ($guess == 999999) {
+				echo "(It's " . NUMBER . ".)\n";
+				$guess = NUMBER;
 			}
 
 			else {
